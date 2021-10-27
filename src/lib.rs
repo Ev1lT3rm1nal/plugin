@@ -16,13 +16,13 @@ pub enum ProxyType {
     SOCKS5,
 }
 
-//THE NAME OF YOUR PLUGIN
+// Use lower_snake_case syntax for naming and add \0 add the end of the string
 #[no_mangle]
 pub extern "C" fn PLUGIN_NAME() -> *const c_char {
     "name\0".as_ptr() as *const c_char
 }
 
-//THE NAME OF YOUR PLUGIN
+// Use semantic versioning (SemVer) and add \0 add the end of the string
 #[no_mangle]
 pub extern "C" fn PLUGIN_VERSION() -> *const c_char {
     "0.0.1\0".as_ptr() as *const c_char
