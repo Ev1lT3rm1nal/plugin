@@ -8,6 +8,13 @@ pub enum ResultType {
     HIT,
     BAD,
 }
+// DON'T CHANGE THIS
+#[repr(C)]
+pub enum ProxyType {
+    HTTPS,
+    SOCKS4,
+    SOCKS5
+}
 
 //THE NAME OF YOUR PLUGIN
 #[no_mangle]
@@ -26,6 +33,7 @@ pub extern "C" fn get_combo_result(
     user: *mut ::std::os::raw::c_char,
     pass: *mut ::std::os::raw::c_char,
     proxy: *mut ::std::os::raw::c_char,
+    proxy_type: ProxyType
 ) -> ResultType {
     // ADD YOUR CODE HERE
 
