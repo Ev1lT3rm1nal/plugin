@@ -41,12 +41,12 @@ pub extern "C" fn get_combo_result(
     pass: *mut ::std::os::raw::c_char,
     proxy: *mut ::std::os::raw::c_char,
     proxy_type: ProxyType,
-) -> *mut ResultCheck {
+) -> ResultCheck {
     // ADD YOUR CODE HERE
 
-    Box::leak(Box::new(ResultCheck {
+    ResultCheck {
         result_type: ResultType::BAD,
         extra_info: "Add what you want to be saved on the file additionally!\0".as_ptr()
             as *const c_char,
-    }))
+    }
 }
